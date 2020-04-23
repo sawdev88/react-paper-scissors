@@ -1,0 +1,112 @@
+body {
+  background: #9ac0cd;
+  color: #fff;
+}
+
+h1 {
+  font-size: 1.5rem;
+  font-weight: 300;
+  vertical-align: bottom;
+  line-height: 7rem;
+}
+
+.flex-1 {
+  flex: 1;
+}
+
+.wins {
+  color: #9aa7cd;
+}
+
+.losses {
+  color: #cda79a;
+}
+
+.score-callout {
+  font-size: 4rem;
+  vertical-align: -14%;
+  font-weight: 300;
+}
+
+.game-container {
+  width: 45%;
+  margin: 1rem auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.game-item {
+  height: 10rem;
+  width: 10rem;
+  background: #f08080;
+  border-radius: 50%;
+  text-align: center;
+  line-height: 10rem;
+  cursor: pointer;
+  margin: 1rem auto;
+  transition: .3s ease-in-out;
+
+  &.disabled {
+    opacity: .3;
+  }
+
+  &:nth-of-type(2) {
+    background: #f0b880;
+  }
+
+  &:nth-of-type(3) {
+    background: #8080f0;
+  }
+
+  &.gusser {
+    margin: auto;
+    font-size: 5rem;
+    color: rgba(255,255,255,.7);
+    cursor: default;
+
+    &:hover {
+      transform: scale(1);
+      box-shadow: 0 0 8px rgba(0,0,0,0);
+    }
+  }
+
+  & .game-item-img {
+    height: 6rem;
+    width: auto;
+  }
+
+  &:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 8px rgba(0,0,0,.3);
+  }
+}
+
+.comp-play {
+  .game-item {
+    background: #888;
+    opacity: 1 !important;
+  }
+}
+
+.alert-container {
+  position: fixed;
+  bottom: -3rem;
+  left: 0;
+  width: 100%;
+  height: 3rem;
+  line-height: 3rem;
+  text-align: center;
+  background: #6696c1;
+  z-index: 1002;
+  transition: .3s ease-in-out;
+
+  &.show {
+    bottom: 0;
+  }
+
+  &.danger {
+    background: #d9534f;
+  }
+}
