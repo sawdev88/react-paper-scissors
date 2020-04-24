@@ -10,8 +10,17 @@ h1 {
   line-height: 7rem;
 }
 
+a {
+  color: #fff;
+}
+
 .flex-1 {
   flex: 1;
+}
+
+.header {
+  padding: .5rem;
+  background: #8aacb8;
 }
 
 .wins {
@@ -109,4 +118,18 @@ h1 {
   &.danger {
     background: #d9534f;
   }
+}
+
+// reg
+
+.reg-container {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 26vw;
+  height: auto;
+  padding: 2rem 4rem;
+  border-radius: 8px;
+  background: rgba(255,255,255,.2);
 }

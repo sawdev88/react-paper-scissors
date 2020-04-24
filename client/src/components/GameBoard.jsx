@@ -58,12 +58,12 @@ function GameBoard() {
 
   return (
     <div>
-      <header className="d-flex mt-5">
+      <div className="d-flex mt-3">
         <div className="flex-1 text-center"><h1>Rock, Paper, Scissors</h1></div>
         <div className="flex-1 text-center">
           <span className="score-callout wins">{ wins }</span> Wins <span className="score-callout losses ml-5">{ losses }</span> Losses
         </div>
-      </header>
+      </div>
 
       <div className="game-container">
         <div className="flex-1">
