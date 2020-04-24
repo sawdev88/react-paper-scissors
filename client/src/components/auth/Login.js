@@ -16,16 +16,13 @@ function Login(props) {
   })
 
   useEffect(() => {
-
     if (currentState.auth.isAuthenticated) {
-        console.log(state)
-        console.log(currentState)
         props.history.push('/')
     } else {
       console.log('no auth')
     }
 
-  }, [state])
+  }, [currentState])
 
   const handleInputChange = event => {
     const { name, value } = event.target;
@@ -39,8 +36,6 @@ function Login(props) {
   const handleSubmit = event => {
     event.preventDefault();
     dispatch(loginUser(state))
-
-    console.log(state);
   };
 
   return (

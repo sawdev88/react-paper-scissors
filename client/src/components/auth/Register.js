@@ -18,7 +18,6 @@ function Register(props) {
   })
 
   useEffect(() => {
-    console.log('hit')
       setState({ errors: input.errors });
   }, [input.errors])
 

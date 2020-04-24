@@ -11,6 +11,7 @@ const validateLoginInput = require("../../validation/login");
 
 // Load User model
 const User = require("../../models/User");
+const Scores = require("../../models/Scores");
 
 // @route POST api/users/register
 // @desc Register user
@@ -25,13 +26,12 @@ router.post("/register", (req, res) => {
     return res.status(400).json(errors);
   }
 
-  User.findOne({ email: req.body.email }).then(user => {
+  User.findOne({ email: req.body.name }).then(user => {
     if (user) {
-      return res.status(400).json({ email: "Email already exists" });
+      return res.status(400).json({ name: "Username already exists" });
     } else {
       const newUser = new User({
         name: req.body.name,
-        email: req.body.email,
         password: req.body.password
       });
 
@@ -42,7 +42,20 @@ router.post("/register", (req, res) => {
           newUser.password = hash;
           newUser
             .save()
-            .then(user => res.json(user))
+            .then(user => {
+              console.log('new user created')
+               res.json(user)
+
+               const newScores = new Scores({
+                 userId: user._id
+               })
+
+               newScores.save().then(scores => {
+                 console.log('scores row created')
+               })
+               .catch(err => console.log(err));
+              }
+             )
             .catch(err => console.log(err));
         });
       });
